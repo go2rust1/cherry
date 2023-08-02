@@ -44,17 +44,17 @@ func Parser(topic cherry.Topic, response cherry.Response) {
 
 func main() {
 	db := cherry.MySQL()
-	db.SetDSN("")
-	db.SetTable("")
-	db.Bind(Model{})
+  	db.SetDSN("")
+  	db.SetTable("")
+  	db.Bind(Model{})
   
-  _cherry := cherry.New()
+	_cherry := cherry.New()
 
-  topic, _ := _cherry.NewTopic("TopicName")
-  topic.Request("https://www.baidu.com/", Parser, nil)
-  topic.Bind(db)
+	topic, _ := _cherry.NewTopic("TopicName")
+	topic.Request("https://www.baidu.com/", Parser, nil)
+	topic.Bind(db)
 
-  _cherry.Start()
+	_cherry.Start()
 }
 ```
 
